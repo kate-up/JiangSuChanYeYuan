@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>研发中心月度例会会议记录</title>
+    <!-- 设置文档编码 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../../js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/vue.js"></script>
+    <script src="../../component/ulList.js"></script>
+    <script src="../../component/table.js"></script>
+    <link rel="stylesheet" href="../../css/component.css">
+    <style type="text/css">
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+        .green_tit{
+            font-size: 17px;
+            color: #3daa62;
+            padding-left: 10px;
+            border-left: 5px solid #3daa62;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" :style="{height: screenHeight + 'px'}" style="background: #f7f7f8;padding-top: 1px;overflow: hidden">
+        <ul-lists :meet-list = "meetList"></ul-lists>
+        <div class="shell">
+            <div class="green_tit">会议记录</div>
+            <table-list :table-head="tableHead" :table-body="tableBody"></table-list>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            screenHeight:
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight,
+            meetList: [
+                {title: "会议主题", cont: "xxxxx"},
+                {title: "会议编号", cont: "AS2421543"},
+                {title: "会议时间", cont: "2020-05-20 12:00"},
+                {title: "会议类型", cont: "xxx"},
+                {title: "会议地点", cont: "xxx"},
+                {title: "主持人", cont: "张峰"},
+                {title: "所属项目", cont: "xxx"},
+                {title: "参会人员", cont: "张峰"},
+                {title: "缺席人员", cont: "张峰"}
+            ],
+            tableHead: ["工作内容", "责任人", "日期", "是否完成"],
+            tableBody: [
+                {workCont: "xxx", resper: "张峰", date: "2020-05-12", isFinish: "否"},
+                {workCont: "xxx", resper: "晚霞", date: "2020-05-12", isFinish: "是"},
+                {workCont: "xxx", resper: "朝阳", date: "2020-05-12", isFinish: "是"}
+            ]
+        }
+    })
+</script>
+</html>

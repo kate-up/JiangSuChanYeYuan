@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>研发中心月度例会会议记录</title>
+    <!-- 设置文档编码 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../../js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/vue.js"></script>
+    <script src="../../component/ulList.js"></script>
+    <script src="../../component/formMenu.js"></script>
+    <link rel="stylesheet" href="../../css/component.css">
+    <style type="text/css">
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+        .green_tit{
+            font-size: 17px;
+            color: #3daa62;
+            padding-left: 10px;
+            border-left: 5px solid #3daa62;
+            margin-bottom: 12px;
+        }
+        .chaxun {
+            background: #3daa62;
+            color: #fff;
+            width: 70%;
+            height: 35px;
+            border-radius: 3px;
+            line-height: 35px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="app" :style="{height: screenHeight + 'px'}" style="background: #f7f7f8;padding-top: 1px;overflow-y: scroll">
+    <ul-lists :meet-list = "meetList"></ul-lists>
+
+    <div style="background: #fff; width: 100%;padding: 10px 0 20px 0;">
+        <div class="chaxun">查询</div>
+    </div>
+
+    <div class="shell" v-for="(item, index) in menulists">
+        <form-menu :menu-list = "item"></form-menu>
+    </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            screenHeight:
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight,
+            meetList: [
+                {title: "会议主题", cont: "xxxxx"},
+                {title: "缺席人员", cont: "张峰"}
+            ],
+            tableHead: [],
+            tableBody: [
+                {workCont: "xxx", resper: "张峰", date: "2020-05-12", isFinish: "否"},
+                {workCont: "xxx", resper: "晚霞", date: "2020-05-12", isFinish: "是"},
+                {workCont: "xxx", resper: "朝阳", date: "2020-05-12", isFinish: "是"}
+            ],
+            menulist: [
+                {tit: "预约部门", cont: "销售部"},
+                {tit: "预约会议室", cont: "一号厅"},
+                {tit: "预约日期", cont: "2015-11-25"},
+                {tit: "会议主题", cont: "销售大会"},
+                {tit: "会议具体事由", cont: "各地区销售总监参加"},
+                {tit: "预约时段", cont: "9:00-10:00"},
+                {tit: "预约人", cont: "小鱼儿"}
+            ],
+            menulists: [
+                [
+                    {tit: "预约部门", cont: "销售部"},
+                    {tit: "预约会议室", cont: "一号厅"},
+                    {tit: "预约日期", cont: "2015-11-25"},
+                    {tit: "会议主题", cont: "销售大会"},
+                    {tit: "会议具体事由", cont: "各地区销售总监参加"},
+                    {tit: "预约时段", cont: "9:00-10:00"},
+                    {tit: "预约人", cont: "小鱼儿"}
+                ],
+                [
+                    {tit: "预约部门", cont: "销售部"},
+                    {tit: "预约会议室", cont: "一号厅"},
+                    {tit: "预约日期", cont: "2015-11-25"},
+                    {tit: "会议主题", cont: "销售大会"},
+                    {tit: "会议具体事由", cont: "各地区销售总监参加"},
+                    {tit: "预约时段", cont: "9:00-10:00"},
+                    {tit: "预约人", cont: "小鱼儿"}
+                ]
+            ]
+        }
+    })
+</script>
+</html>

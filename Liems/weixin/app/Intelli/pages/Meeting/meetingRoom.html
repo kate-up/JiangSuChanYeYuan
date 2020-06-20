@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>xxx会议室</title>
+    <!-- 设置文档编码 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+<!--    <link rel="stylesheet" href="../css/bootstrap.min.css">-->
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<!--    <script src="../js/jquery.min.js"></script>-->
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<!--    <script src="../js/bootstrap.min.js"></script>-->
+    <script src="../../js/vue.js"></script>
+    <script src="../../component/cardLsit.js"></script>
+    <script src="../../component/popup.js"></script>
+    <link rel="stylesheet" href="../../css/component.css">
+    <style type="text/css">
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+    </style>
+</head>
+<body>
+<div id="app" :style="{height: screenHeight + 'px'}" style="background: #f7f7f8;padding-top: 1px;overflow: hidden;">
+    <card-list v-for="(item, index) in meetinglists" :meetroom-list="item"></card-list>
+    <pop-up></pop-up>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            screenHeight:
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight,
+            meetinglists: [
+                {
+                    title: "主题",
+                    info1: "研发中心月度例会",
+                    info2: "会议地点：三楼大会议室",
+                    info3: "会议时间： 2015-05-09 09:00-11:30",
+                    btnblue: "会议记录",
+                    btngreen: "资料下载"
+                },
+                {
+                    title: "主题",
+                    info1: "研发中心月度例会",
+                    info2: "会议地点：三楼大会议室",
+                    info3: "会议时间： 2015-05-09 09:00-11:30",
+                    btnblue: "会议记录",
+                    btngreen: "资料下载"
+                }
+            ]
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>会议室预约</title>
+    <!-- 设置文档编码 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <!--    <link rel="stylesheet" href="../css/bootstrap.min.css">-->
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <!--    <script src="../js/jquery.min.js"></script>-->
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--    <script src="../js/bootstrap.min.js"></script>-->
+    <script src="../../js/vue.js"></script>
+    <script src="../../component/cardLsit.js"></script>
+    <link rel="stylesheet" href="../../css/component.css">
+    <style type="text/css">
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+    </style>
+</head>
+<body>
+<div id="app" :style="{height: screenHeight + 'px'}" style="background: #f7f7f8;padding-top: 1px;overflow: hidden;">
+    <card-list v-for="(item, index) in meetinglists" :meetroom-list="item"></card-list>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            screenHeight:
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight,
+            meetinglists: [
+                {
+                    title: "三楼大会议室302房间-露演",
+                    info1: "容纳： 30人",
+                    info2: "地址： 三楼主厅东侧",
+                    info3: "当日已预约： 09:00-11:30 11:30-15:30PM",
+                    btnblue: "",
+                    btngreen: "预约"
+                },
+                {
+                    title: "三楼大会议室302房间-露演",
+                    info1: "容纳： 30人",
+                    info2: "地址： 三楼主厅东侧",
+                    info3: "当日已预约： 09:00-11:30 11:30-15:30PM  11:30-15:30PM",
+                    btnblue: "",
+                    btngreen: "预约"
+                }
+            ]
+        }
+    })
+</script>
+</html>

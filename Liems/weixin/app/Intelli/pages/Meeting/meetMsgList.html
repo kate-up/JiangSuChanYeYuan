@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>会议消息列表</title>
+    <!-- 设置文档编码 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="../../js/vue.js"></script>
+    <script src="../../component/msgList.js"></script>
+    <link rel="stylesheet" href="../../css/component.css">
+    <style type="text/css">
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+    </style>
+</head>
+<body>
+<div id="app" :style="{height: screenHeight + 'px'}" style="background: #f7f7f8;padding-top: 1px;overflow-y: scroll;">
+    <msg-list :msg-list="item" v-for="(item, index) in msgList"></msg-list>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            screenHeight:
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight,
+            msgList: [
+                {
+                    title: "会议主题：xxx",
+                    info: [
+                        {title: "会议类别", cont: "xxxxxx"},
+                        {title: "会议室", cont: "3楼302会议室"},
+                        {title: "组织部门", cont: "总裁办"},
+                        {title: "会议开始时间", cont: "2020-05-20 12:00"},
+                        {title: "会议结束时间", cont: "2020-05-20 12:00"}
+                    ]
+                },
+                {
+                    title: "会议主题：xxxxxxxx",
+                    info: [
+                        {title: "会议类别", cont: "xxxxxx"},
+                        {title: "会议室", cont: "3楼302会议室"},
+                        {title: "组织部门", cont: "总裁办"},
+                        {title: "会议开始时间", cont: "2020-05-20 12:00"},
+                        {title: "会议结束时间", cont: "2020-05-20 12:00"}
+                    ]
+                }
+            ]
+        }
+    })
+</script>
+</html>

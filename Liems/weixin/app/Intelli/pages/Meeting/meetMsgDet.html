@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>会议消息详情</title>
+    <!-- 设置文档编码 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="../../js/vue.js"></script>
+    <script src="../../component/cardLsit.js"></script>
+    <script src="../../component/ulList.js"></script>
+    <script src="../../component/msgList.js"></script>
+    <link rel="stylesheet" href="../../css/component.css">
+    <style type="text/css">
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+        .btn_nojoin, .btn_join {
+            width: 80%;
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #a3d4b4;
+            border-radius: 3px;
+            margin: 20px auto;
+        }
+        .btn_join {
+            background: #3daa62;
+        }
+    </style>
+</head>
+<body>
+<div id="app" :style="{height: screenHeight + 'px'}" style="background: #f7f7f8;padding-top: 1px;overflow: hidden;">
+    <msg-list :msg-list="msgList" ></msg-list>
+    <div class="btn_nojoin">不参与</div>
+    <div class="btn_join">不参与</div>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            screenHeight:
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight,
+            msgList:{
+                title: "三楼大会议室302房间-露演",
+                info: [
+                    {title: "会议主题", cont: "xxxxxx"},
+                    {title: "会议类别", cont: "xxxxxx"},
+                    {title: "会议开始时间", cont: "2020-05-20 12:00"},
+                    {title: "会议结束时间", cont: "2020-05-20 12:00"},
+                    {title: "会议室", cont: "3楼302会议室"},
+                    {title: "组织部门", cont: "总裁办"},
+                    {title: "召集人", cont: "张媛"},
+                    {title: "主持人", cont: "张远"},
+                    {title: "参与人员", cont: "总裁办3人 研发人员4人 不参与2人"},
+                    {title: "会议名称", cont: "xxxxx"},
+                    {title: "召集人", cont: "xxxxx"},
+                ]
+            }
+        }
+    })
+</script>
+</html>
